@@ -1,0 +1,37 @@
+<script type="text/javascript" src="//sgxengine.com/code/lib/js/jquery/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="basic.js"></script>
+<script type="text/javascript" src="final.js"></script>
+<script type="text/javascript" src="short.js"></script>
+
+<h1>Calculating Bernoulli Numbers in Javascript</h1>
+<h2>The Akiyama Tanigawa method</h3>
+
+<div id="basic"><h3>Basic algorithm</h3></div>
+<div id="short"><h3>Short algorithm</h3></div>
+
+<script type="text/javascript">
+	var b;
+	for(var n=0;n<20;++n) {
+		b = calculateBernoulli(n);
+		$('#basic').append(present(b) + "<br>");
+
+		b = calculateB(n);
+		$('#short').append(present(b) + "<br>");
+	}
+
+	function present(b) {
+		if (b[0] === 0) {
+			return "0";
+		}
+		return (b[1]<0?'-':'') + b[0]+"/"+Math.abs(b[1]);
+	}
+</script>
+
+<p>
+	We still needs a better 'reduce' method.
+</p>
+
+<p>
+<a href="http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=439429C76AFFE20AE670FD357D33B6D6?doi=10.1.1.32.8856&rep=rep1&type=pdf">For further information...</a>
+</p>
+
